@@ -1,0 +1,53 @@
+<html>
+
+<script src="ejs_production.js"></script>
+
+<body>
+<div class="template">
+
+</div>
+<button onclick="toggle()">Toggle</button>
+</body>
+<script>
+var flag = false;
+var pinky_data = {
+  title :'Pinky and Motuu',
+  subTitle:'Pinky',
+  sex:'naughty girl',
+  friend:'Ujjal',
+  hobby:'have fun and eat head',
+  thinks:' ?????..still thinking',
+  action:'fights and tease',
+  expects:'hard spanking'
+}
+
+var motuu_data = {
+  title :'Motuu and pinky',
+  subTitle:'Motuu',
+  sex:'very good ,innocent,caring,loving,lakho me ek boy',
+  friend:'Pinky',
+  hobby:'irritate and spank pinky',
+  thinks:'tooo chweeeet and lovely friend',
+  action:'share baje jokes',
+  expects:'a tight hug'
+}
+
+function toggle(){
+var data;
+  if(flag==false){
+    data = pinky_data;
+    flag = true;
+  }
+  else{
+    data = motuu_data;
+    flag = false;
+  }
+  var html = new EJS({
+    url:'template.ejs'
+  }).render(data);
+
+  document.querySelector('.template').innerHTML = html;
+}
+toggle();
+</script>
+</html>
